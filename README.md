@@ -5,9 +5,10 @@ Codebook is an Express app for saving code snippets and notes.
 ## Deploy on Render
 
 1. Push this project to a GitHub repository.
-2. In Render, choose **New +** → **Blueprint** and connect that repository.
-3. Render reads `render.yaml` to create the web service and PostgreSQL database. The database uses Render's `basic-256mb` plan.
-4. Select **Apply** and wait for the service to finish deploying. Render supplies the database connection string as `DATABASE_URL`; the app creates its table at startup.
+2. Create a PostgreSQL database with a provider such as Neon and copy its connection string. Keep the connection string private.
+3. In Render, choose **New +** → **Blueprint** and connect this repository.
+4. When prompted for `DATABASE_URL`, paste the database connection string directly into Render.
+5. Select **Apply** and wait for the service to finish deploying. The app creates its table at startup.
 
 ## Run locally
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7fb">
+    <title>Your snippets - Codebook</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Codebook home">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span>Code<span class="brand-accent">book</span></span>
+        </a>
+        <a class="nav-link" href="/">← <span>Back to editor</span></a>
+    </header>
+
+    <main class="page-shell library-page">
+        <section class="library-heading">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR PERSONAL CODE SPACE</p>
+            <h1>Your <span>snippets.</span></h1>
+            <p class="intro-copy">All your saved thoughts, together in one place.</p>
+        </section>
+
+        <% if (content.length === 0) { %>
+            <section class="empty-state">
+                <span class="empty-icon" aria-hidden="true">{ }</span>
+                <h2>Your shelf is waiting.</h2>
+                <p>Save your first snippet or note and it will show up here.</p>
+                <a class="button button-primary" href="/">Create your first entry <span aria-hidden="true">→</span></a>
+            </section>
+        <% } else { %>
+            <div class="entries-heading">
+                <h2>Saved entries</h2>
+                <span><%= content.length %> <%= content.length === 1 ? "entry" : "entries" %></span>
+            </div>
+            <section class="entries-list" aria-label="Saved entries">
+                <% for (let con of content) { %>
+                    <article class="entry-card">
+                        <div class="entry-topline">
+                            <div class="entry-meta"><span class="entry-dot"></span> SAVED ENTRY</div>
+                            <div class="entry-actions">
+                                <span class="copy-status" aria-live="polite"></span>
+                                <button class="copy-button" type="button">Copy</button>
+                            </div>
+                        </div>
+                        <pre><code><%= con.content %></code></pre>
+                    </article>
+                <% } %>
+            </section>
+        <% } %>
+    </main>
+
+    <footer class="site-footer">A little space for your next big idea.</footer>
+    <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7fb">
+    <title>Codebook</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Codebook home">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span>Code<span class="brand-accent">book</span></span>
+        </a>
+        <a class="nav-link" href="/showall">Your snippets <span aria-hidden="true">→</span></a>
+    </header>
+
+    <main class="page-shell">
+        <section class="intro">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR PERSONAL CODE SPACE</p>
+            <h1>Save a thought.<br><span>Keep it close.</span></h1>
+            <p class="intro-copy">A simple home for the code, notes, and little ideas you don't want to lose.</p>
+        </section>
+
+        <section class="editor-card" aria-labelledby="editor-title">
+            <div class="card-heading">
+                <div>
+                    <p class="card-kicker">NEW ENTRY</p>
+                    <h2 id="editor-title">What are you working on?</h2>
+                </div>
+                <span class="editor-icon" aria-hidden="true">{ }</span>
+            </div>
+            <form action="/submit" method="POST">
+                <label class="sr-only" for="textarea">Snippet or note</label>
+                <textarea id="textarea" name="content" placeholder="Paste a code snippet or jot down a quick note..." required></textarea>
+                <div class="editor-tools">
+                    <span>Plain text, just the way you wrote it</span>
+                    <output id="character-count" for="textarea">0 characters</output>
+                </div>
+                <div class="form-footer">
+                    <p class="privacy-note"><span aria-hidden="true">↳</span> Ready when you need it</p>
+                    <button class="button button-primary" type="submit">Save entry <span aria-hidden="true">→</span></button>
+                </div>
+            </form>
+        </section>
+
+        <a class="browse-card" href="/showall">
+            <span class="browse-icon" aria-hidden="true">↗</span>
+            <span class="browse-text"><strong>Looking for something?</strong><span>Browse everything you've saved</span></span>
+            <span class="browse-arrow" aria-hidden="true">→</span>
+        </a>
+    </main>
+
+    <footer class="site-footer">A little space for your next big idea.</footer>
+    <script src="/app.js" defer></script>
+</body>
+</html>
